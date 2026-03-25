@@ -385,15 +385,11 @@
 
 						<h2 style="color: black;">FAQ</h2>
                         <b>Q0.</b> Why is it important to learn whole-body mobile manipulation capabilities directly from human demonstrations? <br>
-						<b>A0.</b> It is much more natural, efficient, and scalable to learn whole-body mobile manipulation capabilities directly from human demonstrations than from teleoperation data.
+						<b>A0.</b> Our data collection is much more natural, efficient, and scalable than teleoperation.
 
 						<br><br>
                         <b>Q1.</b> Can your framwork allow data collectors with different heights? <br>
-						<b>A1.</b> Yes, our 3D visual representation and relaxed head action representation are designed to be embodiment-agnostic, and thus can be adapted to different human heights and body poses. And actually different data collectors with different heights and body poses are already collected in our dataset.
-
-                        <!-- <br><br>
-                        <b>Q2.</b> Would randomizing heights and body poses during data collection help with generalization? <br>
-						<b>A2.</b> It could help, but the distribution of human heights and robot heights would still be different, and thus our 3d visual representation and relaxed head action representation are still necessary. -->
+						<b>A1.</b> Yes, our 3D visual representation and relaxed head action representation are designed to be embodiment-agnostic, and thus can be adapted to different human heights and body poses. Demonstrations used in our experiments were actually collected from two operators with different heights and both transferred successfully.
 
 						<br><br>
 						<b>Q2.</b> Why don't you simply do inpainting to the arms and body observations? <br>
@@ -403,10 +399,11 @@
                         <b>Q3.</b> Why don't you use a 6-DoF arm as neck? <br>
 						<b>A3.</b> A 6-DoF arm as neck would be too bulky and heavy, and not energy efficient. We believe a more generalizable solution is using a standard hardware (e.g., a 2-DoF neck) and a more generalizable policy design.
 
-                        <!-- <br><br>
-                        <b>Q4.</b> What is the difference between HoMMI and <a href=https://egocentric-manipulation-interface.github.io>EgoMI</a>?<br>
-						<b>A4.</b> EgoMI is a method that learns whole-body mobile manipulation capabilities from teleoperation data. Our method learns whole-body mobile manipulation capabilities directly from human demonstrations, without any teleoperation data.
-                         -->
+						<br><br>
+						<b>Q4.</b> Would using 3D representation add a lot of complexity to the system? <br>
+						<b>A4.</b> We do not use 3D backbone, but a 2D backbone (DINO-ViT) with 3D points as positional encodings, which is still lightweight and efficient.
+
+
                         <hr>
 						<h2 style="color: black;">Acknowledgments</h2>
 						<p style="color: black;">The authors would like to thank Calder Phillips-Grafflin, Aimee Goncalves, and Andrew Beaulieu from TRI for their help with the RB-Y1 hardware setup. 
@@ -415,21 +412,18 @@
 							Phoebe Horgan, Allison Henry, Richard Denitto, Maya Angeles, Samuel, Owen Pfannenstiehl, Mariah Smith-Jones, Matthew Tran, and Gordon Richardson from TRI for their help with data collection.
 							Yifan Hou, Huy Ha, Hojung Choi, all REALab members, and Jinghan Sun for their helpful discussions and feedback on the manuscript.
 							
-							This work was supported in part by the  NSF Award #2143601, #2037101, and #2132519, and Toyota Research Institute. 
+							This work was supported in part by the NSF Award #2143601, #2037101, and #2132519, and Toyota Research Institute. 
 							The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies, either expressed or implied, of the sponsors.</p>
 						<hr>
 
 						<h2 style="color: black;">Citation</h2>
 						<pre><code style="color: black">	
-@misc{xu2026hommilearningwholebodymobile,
-	title={HoMMI: Learning Whole-Body Mobile Manipulation from Human Demonstrations}, 
-	author={Xiaomeng Xu and Jisang Park and Han Zhang and Eric Cousineau and Aditya Bhat and Jose Barreiros and Dian Wang and Shuran Song},
-	year={2026},
-	eprint={2603.03243},
-	archivePrefix={arXiv},
-	primaryClass={cs.RO},
-	url={https://arxiv.org/abs/2603.03243}, 
-}
+@article{xu2026hommi,
+	title={HoMMI: Learning Whole-Body Mobile Manipulation from Human Demonstrations},
+	author={Xu, Xiaomeng and Park, Jisang and Zhang, Han and Cousineau, Eric and Bhat, Aditya and Barreiros, Jose and Wang, Dian and Song, Shuran},
+	journal={arXiv preprint arXiv:2603.03243},
+	year={2026}
+	}
 						</code></pre>
 					</section>
 					
